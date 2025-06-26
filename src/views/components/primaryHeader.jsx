@@ -4,21 +4,22 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Typography from '@mui/material/Typography';
 
-export default function PrimaryHeader() {
+export default function PrimaryHeader({ text, children }) {
   return (
     <Typography 
-      variant="h3" 
+      variant="h1" 
       component="h1"
       sx={{
-        color: 'white',
-        textAlign: 'center',
-        padding: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 1,
         margin: 0,
-        fontWeight: 300,
-        letterSpacing: '0.5px'
+        fontWeight: 500,
+        letterSpacing: '0.5px',
       }}
     >
-      Family Gallery
+      {text} {children}
     </Typography>
   );
 }

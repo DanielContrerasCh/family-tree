@@ -1,6 +1,7 @@
 import BoxBasic from "../components/box";
 import Masonry from "../components/masonry";
 import PrimaryHeader from "../components/primaryHeader";
+import RotatingText from "../components/rotatingText";
 
 // Datos de prueba para el componente Masonry
 const items = [
@@ -83,7 +84,35 @@ function FamilyTree() {
 
     return (
         <BoxBasic>
-            <PrimaryHeader />
+            {/* Header Section */}
+            <BoxBasic 
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 2,
+                    padding: '20px',
+                    minHeight: 'auto'
+                }}
+            >
+                <PrimaryHeader text='Familia'>
+                    <RotatingText
+                    texts={['Álvarez Mejía', 'Ortega Álvarez']}
+                    mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                    staggerFrom={"last"}
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-120%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    rotationInterval={2000}
+                />
+                </PrimaryHeader>
+                
+            </BoxBasic>
+            
+            {/* Masonry Section */}
             <Masonry
                 items={items}
                 ease="power3.out"
