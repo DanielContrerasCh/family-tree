@@ -13,6 +13,7 @@ export default function PrimaryHeader({ text, children }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        width: '100%',
         gap: 1,
         margin: 0,
         fontWeight: 500,

@@ -95,9 +95,16 @@ function FamilyTree() {
                     minHeight: 'auto'
                 }}
             >
-                <PrimaryHeader text='Familia'>
+                <PrimaryHeader text=''>
                     <RotatingText
-                    texts={['Álvarez Mejía', 'Ortega Álvarez']}
+                    texts={['Álvarez Mejía', 
+                        'Contreras Álvarez',
+                        'Ortega Álvarez',
+                        'Álvarez Cejudo',
+                        'Álvarez Ramos',
+                        'Castañeda Álvarez',
+                        'García Álvarez',
+                        'Blanco Álvarez',]}
                     mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                     staggerFrom={"last"}
                     initial={{ y: "100%" }}
@@ -109,7 +116,6 @@ function FamilyTree() {
                     rotationInterval={2000}
                 />
                 </PrimaryHeader>
-                
             </BoxBasic>
             
             {/* Masonry Section */}
