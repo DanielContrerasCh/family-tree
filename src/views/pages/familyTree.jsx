@@ -2,6 +2,8 @@ import BoxBasic from "../components/box";
 import Masonry from "../components/masonry";
 import PrimaryHeader from "../components/primaryHeader";
 import RotatingText from "../components/rotatingText";
+import FamilyTreeComponent from "../components/familyTreeComponent";
+import familyData from "../../data/family";
 
 // Datos de prueba para el componente Masonry
 const items = [
@@ -130,6 +132,39 @@ function FamilyTree() {
                 blurToFocus={true}
                 colorShiftOnHover={false}
             />
+
+            {/* Family Tree Section */}
+            <BoxBasic 
+                sx={{
+                    padding: '40px 20px',
+                    minHeight: 'auto'
+                }}
+            >
+                <FamilyTreeComponent
+                    familyData={familyData}
+                    parentIds={['juan-alvarez', 'maria-mejia']}
+                    title="Familia Álvarez Mejía"
+                    showBirthYear={true}
+                    onPersonClick={(person) => {
+                        console.log('Persona seleccionada:', person);
+                    }}
+                />
+            </BoxBasic>
+
+            {/* Segundo árbol familiar como ejemplo */}
+            <BoxBasic 
+                sx={{
+                    padding: '40px 20px',
+                    minHeight: 'auto'
+                }}
+            >
+                <FamilyTreeComponent
+                    familyData={familyData}
+                    parentIds={['carlos-contreras', 'ana-alvarez']}
+                    title="Familia Contreras Álvarez"
+                    showBirthYear={true}
+                />
+            </BoxBasic>
         </BoxBasic>
     );
 }
