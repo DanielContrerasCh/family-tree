@@ -150,21 +150,6 @@ function FamilyTree() {
                     }}
                 />
             </BoxBasic>
-
-            {/* Segundo árbol familiar como ejemplo */}
-            <BoxBasic 
-                sx={{
-                    padding: '40px 20px',
-                    minHeight: 'auto'
-                }}
-            >
-                <FamilyTreeComponent
-                    familyData={familyData}
-                    parentIds={['carlos-contreras', 'ana-alvarez']}
-                    title="Familia Contreras Álvarez"
-                    showBirthYear={true}
-                />
-            </BoxBasic>
         </BoxBasic>
     );
 }
