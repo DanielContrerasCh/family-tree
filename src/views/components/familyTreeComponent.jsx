@@ -92,21 +92,25 @@ const FamilyTreeComponent = ({
       {/* Información adicional del miembro seleccionado */}
       {selectedPerson && (
         <div className="person-details">
-          <h4>Información de {selectedPerson.name}</h4>
-          <p><strong>Año de nacimiento:</strong> {selectedPerson.birthYear || 'No disponible'}</p>
-          <p><strong>Padres:</strong> {
-            selectedPerson.parents.length > 0 
-              ? selectedPerson.parents.map(p => p.name).join(', ')
-              : 'No disponible'
-          }</p>
-          <p><strong>Hijos:</strong> {
-            selectedPerson.children.length > 0 
-              ? selectedPerson.children.map(c => c.name).join(', ')
-              : 'No disponible'
-          }</p>
+          <h4>{selectedPerson.name}</h4>
+          
+          {selectedPerson.email && (
+            <p><strong>Correo:</strong> {selectedPerson.email}</p>
+          )}
+          
+          {selectedPerson.phone && (
+            <p><strong>Teléfono:</strong> {selectedPerson.phone}</p>
+          )}
+          
           {selectedPerson.spouse && (
             <p><strong>Cónyuge:</strong> {selectedPerson.spouse.name}</p>
           )}
+          
+          <p><strong>Hijos:</strong> {
+            selectedPerson.children.length > 0 
+              ? selectedPerson.children.map(c => c.name).join(', ')
+              : 'No tiene hijos'
+          }</p>
         </div>
       )}
     </div>

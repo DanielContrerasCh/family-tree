@@ -1,11 +1,13 @@
 // Estructura de datos familiar usando clases para mejor organización
 
 class Person {
-  constructor(id, name, birthYear = null, photo = null) {
+  constructor(id, name, birthYear = null, photo = null, email = null, phone = null) {
     this.id = id;
     this.name = name;
     this.birthYear = birthYear;
     this.photo = photo;
+    this.email = email;
+    this.phone = phone;
     this.children = [];
     this.parents = [];
     this.spouse = null;
@@ -33,8 +35,8 @@ class Family {
     this.members = new Map();
   }
 
-  addMember(id, name, birthYear = null, photo = null) {
-    const person = new Person(id, name, birthYear, photo);
+  addMember(id, name, birthYear = null, photo = null, email = null, phone = null) {
+    const person = new Person(id, name, birthYear, photo, email, phone);
     this.members.set(id, person);
     return person;
   }
@@ -99,14 +101,14 @@ const familyData = new Family();
 
 // Agregar miembros de la familia Álvarez Mejía
 // Abuelos/Padres principales
-familyData.addMember('juan-alvarez', 'Juan Álvarez', 1950, 'https://picsum.photos/150/150?random=1');
-familyData.addMember('maria-mejia', 'María Mejía', 1952, 'https://picsum.photos/150/150?random=2');
+familyData.addMember('juan-alvarez', 'Juan Álvarez', 1950, 'https://picsum.photos/150/150?random=1', 'juan.alvarez@email.com', '+52 55 1234 5678');
+familyData.addMember('maria-mejia', 'María Mejía', 1952, 'https://picsum.photos/150/150?random=2', 'maria.mejia@email.com', '+52 55 2345 6789');
 
 // Hijos de Juan y María
-familyData.addMember('pepe-alvarez', 'Pepe Álvarez Mejía', 1975, 'https://picsum.photos/150/150?random=3');
-familyData.addMember('luz-alvarez', 'Luz Álvarez Mejía', 1977, 'https://picsum.photos/150/150?random=4');
-familyData.addMember('dan-alvarez', 'Daniel Álvarez Mejía', 1980, 'https://picsum.photos/150/150?random=5');
-familyData.addMember('itzel-alvarez', 'Itzel Álvarez Mejía', 1985, 'https://picsum.photos/150/150?random=6');
+familyData.addMember('pepe-alvarez', 'Pepe Álvarez Mejía', 1975, 'https://picsum.photos/150/150?random=3', 'pepe.alvarez@email.com', '+52 55 3456 7890');
+familyData.addMember('luz-alvarez', 'Luz Álvarez Mejía', 1977, 'https://picsum.photos/150/150?random=4', 'luz.alvarez@email.com', '+52 55 4567 8901');
+familyData.addMember('dan-alvarez', 'Daniel Álvarez Mejía', 1980, 'https://picsum.photos/150/150?random=5', 'daniel.alvarez@email.com', '+52 55 5678 9012');
+familyData.addMember('itzel-alvarez', 'Itzel Álvarez Mejía', 1985, 'https://picsum.photos/150/150?random=6', 'itzel.alvarez@email.com', '+52 55 6789 0123');
 
 // Establecer relaciones familiares
 familyData.addSpouseRelationship('juan-alvarez', 'maria-mejia');
@@ -121,10 +123,10 @@ familyData.addRelationship('maria-mejia', 'itzel-alvarez');
 
 // Agregar más familias si es necesario...
 // Familia Contreras Álvarez (ejemplo)
-familyData.addMember('carlos-contreras', 'Carlos Contreras', 1948);
-familyData.addMember('ana-alvarez', 'Ana Álvarez', 1950);
-familyData.addMember('luis-contreras', 'Luis Contreras Álvarez', 1972);
-familyData.addMember('sofia-contreras', 'Sofía Contreras Álvarez', 1974);
+familyData.addMember('carlos-contreras', 'Carlos Contreras', 1948, null, 'carlos.contreras@email.com', '+52 55 7890 1234');
+familyData.addMember('ana-alvarez', 'Ana Álvarez', 1950, null, 'ana.alvarez@email.com', '+52 55 8901 2345');
+familyData.addMember('luis-contreras', 'Luis Contreras Álvarez', 1972, null, 'luis.contreras@email.com', '+52 55 9012 3456');
+familyData.addMember('sofia-contreras', 'Sofía Contreras Álvarez', 1974, null, 'sofia.contreras@email.com', '+52 55 0123 4567');
 
 familyData.addSpouseRelationship('carlos-contreras', 'ana-alvarez');
 familyData.addRelationship('carlos-contreras', 'luis-contreras');
