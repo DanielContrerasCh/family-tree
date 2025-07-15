@@ -220,7 +220,7 @@ const FamilyTreeComponent = ({
                 </div>
               )}
               
-              <div className="modal-info-item">
+              <div className={`modal-info-item ${expandedPerson.children.length > 2 ? 'full-width' : ''}`}>
                 <strong>Hijos</strong>
                 <span>
                   {expandedPerson.children.length > 0 
