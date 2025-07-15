@@ -9,6 +9,7 @@ const FamilyTreeComponent = ({
   onPersonClick = null 
 }) => {
   const [selectedPerson, setSelectedPerson] = useState(null);
+  const [expandedPerson, setExpandedPerson] = useState(null);
 
   if (!familyData || !parentIds || parentIds.length === 0) {
     return <div className="family-tree-error">No hay datos familiares disponibles</div>;
@@ -21,6 +22,20 @@ const FamilyTreeComponent = ({
     setSelectedPerson(selectedPerson?.id === person.id ? null : person);
     if (onPersonClick) {
       onPersonClick(person);
+    }
+  };
+
+  const handleExpandPerson = (person) => {
+    setExpandedPerson(person);
+  };
+
+  const handleCloseModal = () => {
+    setExpandedPerson(null);
+  };
+
+  const handleModalOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setExpandedPerson(null);
     }
   };
 
@@ -120,6 +135,76 @@ const FamilyTreeComponent = ({
               ? selectedPerson.children.map(c => c.name).join(', ')
               : 'No tiene hijos'
           }</p>
+
+          <button 
+            className="expand-button"
+            onClick={() => handleExpandPerson(selectedPerson)}
+          >
+            Expandir
+          </button>
+        </div>
+      )}
+
+      {/* Modal expandido */}
+      {expandedPerson && (
+        <div className="person-modal-overlay" onClick={handleModalOverlayClick}>
+          <div className="person-modal">
+            <button 
+              className="modal-close-button"
+              onClick={handleCloseModal}
+            >
+              ×
+            </button>
+            
+            <div className="modal-person-photo">
+              {expandedPerson.photo ? (
+                <img src={expandedPerson.photo} alt={expandedPerson.name} />
+              ) : (
+                <div className="modal-photo-placeholder">
+                  <span>{expandedPerson.name.split(' ').map(n => n[0]).join('').slice(0, 2)}</span>
+                </div>
+              )}
+            </div>
+
+            <h2 className="modal-person-name">{expandedPerson.name}</h2>
+            
+            {showBirthYear && expandedPerson.birthYear && (
+              <p className="modal-person-birth-year">Nacido en {expandedPerson.birthYear}</p>
+            )}
+
+            <div className="modal-person-info">
+              {expandedPerson.email && (
+                <div className="modal-info-item">
+                  <strong>Correo Electrónico</strong>
+                  <span>{expandedPerson.email}</span>
+                </div>
+              )}
+              
+              {expandedPerson.phone && (
+                <div className="modal-info-item">
+                  <strong>Teléfono</strong>
+                  <span>{expandedPerson.phone}</span>
+                </div>
+              )}
+              
+              {expandedPerson.spouse && (
+                <div className="modal-info-item">
+                  <strong>Cónyuge</strong>
+                  <span>{expandedPerson.spouse.name}</span>
+                </div>
+              )}
+              
+              <div className="modal-info-item">
+                <strong>Hijos</strong>
+                <span>
+                  {expandedPerson.children.length > 0 
+                    ? expandedPerson.children.map(c => c.name).join(', ')
+                    : 'No tiene hijos'
+                  }
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
