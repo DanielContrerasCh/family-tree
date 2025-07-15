@@ -19,6 +19,103 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Encabezado del árbol familiar */
+.family-tree-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.family-tree-header .family-tree-title {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.back-button {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Navegación en el modal */
+.modal-navigation {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #ecf0f1;
+}
+
+.navigation-title {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.navigation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.family-nav-button {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.family-nav-button:hover {
+  background: linear-gradient(135deg, #229954, #27ae60);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.family-nav-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Indicador de familia actual */
+.current-family-indicator {
+  background: #ecf0f1;
+  color: #7f8c8d;
+  border: 2px dashed #bdc3c7;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.current-family-indicator .emoji {
+  margin-right: 0.5rem;
+}
+
 .family-tree-error {
   text-align: center;
   padding: 2rem;

@@ -10,12 +10,14 @@ const FamilyTreeComponent = ({
 }) => {
   const [selectedPerson, setSelectedPerson] = useState(null);
   const [expandedPerson, setExpandedPerson] = useState(null);
+  const [currentParentIds, setCurrentParentIds] = useState(parentIds);
+  const [familyHistory, setFamilyHistory] = useState([]);
 
-  if (!familyData || !parentIds || parentIds.length === 0) {
+  if (!familyData || !currentParentIds || currentParentIds.length === 0) {
     return <div className="family-tree-error">No hay datos familiares disponibles</div>;
   }
 
-  const familyTree = familyData.getFamilyTree(parentIds);
+  const familyTree = familyData.getFamilyTree(currentParentIds);
   const { parents, children } = familyTree;
 
   const handlePersonClick = (person) => {
@@ -37,6 +39,61 @@ const FamilyTreeComponent = ({
     if (e.target === e.currentTarget) {
       setExpandedPerson(null);
     }
+  };
+
+  const loadNewFamily = (newParentIds, familyName) => {
+    // Guardar la familia actual en el historial
+    setFamilyHistory(prev => [...prev, {
+      parentIds: currentParentIds,
+      selectedPerson: selectedPerson
+    }]);
+    
+    // Cargar la nueva familia
+    setCurrentParentIds(newParentIds);
+    setSelectedPerson(null);
+    setExpandedPerson(null);
+  };
+
+  const goBackToFamily = () => {
+    if (familyHistory.length > 0) {
+      const previousFamily = familyHistory[familyHistory.length - 1];
+      setCurrentParentIds(previousFamily.parentIds);
+      setSelectedPerson(previousFamily.selectedPerson);
+      setExpandedPerson(null);
+      setFamilyHistory(prev => prev.slice(0, -1));
+    }
+  };
+
+  const getNewFamilyIds = (person) => {
+    // Si la persona tiene esposa, crear familia con ambos
+    if (person.spouse) {
+      return [person.id, person.spouse.id];
+    }
+    // Si solo tiene hijos, crear familia solo con esta persona
+    if (person.children && person.children.length > 0) {
+      return [person.id];
+    }
+    return null;
+  };
+
+  const isSameFamily = (newParentIds, currentIds) => {
+    if (!newParentIds || !currentIds || newParentIds.length !== currentIds.length) {
+      return false;
+    }
+    
+    // Ordenar ambos arrays para comparar sin importar el orden
+    const sortedNew = [...newParentIds].sort();
+    const sortedCurrent = [...currentIds].sort();
+    
+    return sortedNew.every((id, index) => id === sortedCurrent[index]);
+  };
+
+  const canNavigateToFamily = (person) => {
+    const newFamilyIds = getNewFamilyIds(person);
+    if (!newFamilyIds) return false;
+    
+    // Verificar si no es la misma familia que ya está cargada
+    return !isSameFamily(newFamilyIds, currentParentIds);
   };
 
   const PersonCard = ({ person, isParent = false }) => (
@@ -66,7 +123,17 @@ const FamilyTreeComponent = ({
 
   return (
     <div className="family-tree-container">
-      <h2 className="family-tree-title">{title}</h2>
+      <div className="family-tree-header">
+        <h2 className="family-tree-title">{title}</h2>
+        {familyHistory.length > 0 && (
+          <button 
+            className="back-button"
+            onClick={goBackToFamily}
+          >
+            ← Regresar a familia anterior
+          </button>
+        )}
+      </div>
       
       {/* Sección de Padres */}
       <div className="parents-section">
@@ -204,6 +271,37 @@ const FamilyTreeComponent = ({
                 </span>
               </div>
             </div>
+
+            {/* Botones de navegación */}
+            {(expandedPerson.spouse || (expandedPerson.children && expandedPerson.children.length > 0)) && (
+              <div className="modal-navigation">
+                <h4 className="navigation-title">Ver árbol familiar de:</h4>
+                <div className="navigation-buttons">
+                  {canNavigateToFamily(expandedPerson) ? (
+                    <button 
+                      className="family-nav-button"
+                      onClick={() => loadNewFamily(
+                        getNewFamilyIds(expandedPerson), 
+                        expandedPerson.name
+                      )}
+                    >
+                      {expandedPerson.spouse 
+                        ? `👨‍👩‍👧‍👦 Familia de ${expandedPerson.name}` 
+                        : `👤 Como padre/madre`
+                      }
+                    </button>
+                  ) : (
+                    <div className="current-family-indicator">
+                      <span className="emoji">📍</span>
+                      Ya estás viendo {expandedPerson.spouse 
+                        ? `la familia de ${expandedPerson.name}` 
+                        : `a ${expandedPerson.name} como padre/madre`
+                      }
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

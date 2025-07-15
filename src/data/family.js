@@ -127,6 +127,7 @@ familyData.addMember('carlos-contreras', 'Carlos Contreras', 1948, null, 'carlos
 familyData.addMember('ana-alvarez', 'Ana Álvarez', 1950, null, 'ana.alvarez@email.com', '+52 55 8901 2345');
 familyData.addMember('luis-contreras', 'Luis Contreras Álvarez', 1972, null, 'luis.contreras@email.com', '+52 55 9012 3456');
 familyData.addMember('sofia-contreras', 'Sofía Contreras Álvarez', 1974, null, 'sofia.contreras@email.com', '+52 55 0123 4567');
+familyData.addRelationship('pepe-alvarez', 'carlos-contreras');
 
 familyData.addSpouseRelationship('carlos-contreras', 'ana-alvarez');
 familyData.addRelationship('carlos-contreras', 'luis-contreras');
