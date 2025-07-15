@@ -8,7 +8,6 @@ const FamilyTreeComponent = ({
   showBirthYear = true,
   onPersonClick = null 
 }) => {
-  const [selectedPerson, setSelectedPerson] = useState(null);
   const [expandedPerson, setExpandedPerson] = useState(null);
   const [currentParentIds, setCurrentParentIds] = useState(parentIds);
   const [familyHistory, setFamilyHistory] = useState([]);
@@ -21,14 +20,11 @@ const FamilyTreeComponent = ({
   const { parents, children } = familyTree;
 
   const handlePersonClick = (person) => {
-    setSelectedPerson(selectedPerson?.id === person.id ? null : person);
+    // Abrir directamente el modal expandido
+    setExpandedPerson(person);
     if (onPersonClick) {
       onPersonClick(person);
     }
-  };
-
-  const handleExpandPerson = (person) => {
-    setExpandedPerson(person);
   };
 
   const handleCloseModal = () => {
@@ -44,13 +40,11 @@ const FamilyTreeComponent = ({
   const loadNewFamily = (newParentIds, familyName) => {
     // Guardar la familia actual en el historial
     setFamilyHistory(prev => [...prev, {
-      parentIds: currentParentIds,
-      selectedPerson: selectedPerson
+      parentIds: currentParentIds
     }]);
     
     // Cargar la nueva familia
     setCurrentParentIds(newParentIds);
-    setSelectedPerson(null);
     setExpandedPerson(null);
   };
 
@@ -58,7 +52,6 @@ const FamilyTreeComponent = ({
     if (familyHistory.length > 0) {
       const previousFamily = familyHistory[familyHistory.length - 1];
       setCurrentParentIds(previousFamily.parentIds);
-      setSelectedPerson(previousFamily.selectedPerson);
       setExpandedPerson(null);
       setFamilyHistory(prev => prev.slice(0, -1));
     }
@@ -98,9 +91,7 @@ const FamilyTreeComponent = ({
 
   const PersonCard = ({ person, isParent = false }) => (
     <div 
-      className={`person-card ${isParent ? 'parent' : 'child'} ${
-        selectedPerson?.id === person.id ? 'selected' : ''
-      }`}
+      className={`person-card ${isParent ? 'parent' : 'child'}`}
       onClick={() => handlePersonClick(person)}
     >
       <div className="person-photo">
@@ -177,38 +168,6 @@ const FamilyTreeComponent = ({
               </div>
             ))}
           </div>
-        </div>
-      )}
-
-      {/* Información adicional del miembro seleccionado */}
-      {selectedPerson && (
-        <div className="person-details">
-          <h4>{selectedPerson.name}</h4>
-          
-          {selectedPerson.email && (
-            <p><strong>Correo:</strong> {selectedPerson.email}</p>
-          )}
-          
-          {selectedPerson.phone && (
-            <p><strong>Teléfono:</strong> {selectedPerson.phone}</p>
-          )}
-          
-          {selectedPerson.spouse && (
-            <p><strong>Cónyuge:</strong> {selectedPerson.spouse.name}</p>
-          )}
-          
-          <p><strong>Hijos:</strong> {
-            selectedPerson.children.length > 0 
-              ? selectedPerson.children.map(c => c.name).join(', ')
-              : 'No tiene hijos'
-          }</p>
-
-          <button 
-            className="expand-button"
-            onClick={() => handleExpandPerson(selectedPerson)}
-          >
-            Expandir
-          </button>
         </div>
       )}
 
