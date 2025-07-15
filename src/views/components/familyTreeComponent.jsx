@@ -114,16 +114,17 @@ const FamilyTreeComponent = ({
 
   return (
     <div className="family-tree-container">
+      {familyHistory.length > 0 && (
+        <button 
+          className="back-button"
+          onClick={goBackToFamily}
+        >
+          ← Regresar a familia anterior
+        </button>
+      )}
+      
       <div className="family-tree-header">
         <h2 className="family-tree-title">{title}</h2>
-        {familyHistory.length > 0 && (
-          <button 
-            className="back-button"
-            onClick={goBackToFamily}
-          >
-            ← Regresar a familia anterior
-          </button>
-        )}
       </div>
       
       {/* Sección de Padres */}
