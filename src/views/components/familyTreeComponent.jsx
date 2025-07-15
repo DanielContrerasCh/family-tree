@@ -57,11 +57,20 @@ const FamilyTreeComponent = ({
       <div className="parents-section">
         <h3 className="section-title">Padres</h3>
         <div className="parents-container">
-          {parents.map((parent) => (
-            <PersonCard key={parent.id} person={parent} isParent={true} />
-          ))}
+          {parents.length >= 1 && (
+            <PersonCard person={parents[0]} isParent={true} />
+          )}
+          
           {parents.length === 2 && (
-            <div className="marriage-line"></div>
+            <div className="marriage-connection">
+              <div className="marriage-line-left"></div>
+              <div className="marriage-heart">♥</div>
+              <div className="marriage-line-right"></div>
+            </div>
+          )}
+          
+          {parents.length >= 2 && (
+            <PersonCard person={parents[1]} isParent={true} />
           )}
         </div>
       </div>

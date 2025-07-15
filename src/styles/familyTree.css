@@ -50,9 +50,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
   flex-wrap: wrap;
+}
+
+/* Componente de conexión matrimonial */
+.marriage-connection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.marriage-line-left,
+.marriage-line-right {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #e74c3c, #f39c12);
+}
+
+.marriage-heart {
+  background: white;
+  color: #e74c3c;
+  padding: 6px 12px;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 35px;
+  min-height: 35px;
+  width: 35px;
+  height: 35px;
 }
 
 .children-container {
@@ -198,30 +229,6 @@
   height: 20px;
   background: linear-gradient(to bottom, #7f8c8d, #34495e);
   margin-bottom: 10px;
-}
-
-.marriage-line {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 200px);
-  height: 2px;
-  background: linear-gradient(to right, #e74c3c, #f39c12);
-  z-index: 0;
-}
-
-/* Línea de matrimonio decorativa */
-.marriage-line::before {
-  content: '♥';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  color: #e74c3c;
-  padding: 0 8px;
-  font-size: 1.2rem;
 }
 
 /* Detalles de persona seleccionada */
