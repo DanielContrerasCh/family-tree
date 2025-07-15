@@ -55,8 +55,8 @@
 
 /* Navegación en el modal */
 .modal-navigation {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
   border-top: 2px solid #ecf0f1;
 }
 
@@ -394,10 +394,10 @@
 .person-modal {
   background: white;
   border-radius: 20px;
-  padding: 2rem;
-  max-width: 700px;
+  padding: 1.5rem;
+  max-width: 750px;
   width: 90%;
-  max-height: 85vh;
+  max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -428,9 +428,9 @@
 }
 
 .modal-person-photo {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 1.5rem;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -451,35 +451,35 @@
   justify-content: center;
   color: white;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.2rem;
 }
 
 .modal-person-name {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #2c3e50;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .modal-person-birth-year {
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #7f8c8d;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .modal-person-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .modal-info-item {
-  padding: 0.8rem;
+  padding: 0.6rem;
   background: #f8f9fa;
-  border-radius: 10px;
-  border-left: 4px solid #3498db;
+  border-radius: 8px;
+  border-left: 3px solid #3498db;
 }
 
 .modal-info-item.full-width {
