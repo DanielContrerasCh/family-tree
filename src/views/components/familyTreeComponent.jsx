@@ -183,11 +183,11 @@ const FamilyTreeComponent = ({
               ×
             </button>
             
-            <div className="modal-person-photo">
+            <div className="modal-person-photo-large">
               {expandedPerson.photo ? (
                 <img src={expandedPerson.photo} alt={expandedPerson.name} />
               ) : (
-                <div className="modal-photo-placeholder">
+                <div className="modal-photo-placeholder-large">
                   <span>{expandedPerson.name.split(' ').map(n => n[0]).join('').slice(0, 2)}</span>
                 </div>
               )}
