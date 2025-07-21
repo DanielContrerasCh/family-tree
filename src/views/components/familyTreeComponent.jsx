@@ -5,7 +5,7 @@ const FamilyTreeComponent = ({
   familyData, 
   parentIds, 
   title = "Árbol Familiar",
-  showBirthYear = true,
+  showDeceasedStatus = true,
   onPersonClick = null 
 }) => {
   const [expandedPerson, setExpandedPerson] = useState(null);
@@ -104,9 +104,9 @@ const FamilyTreeComponent = ({
         )}
       </div>
       <div className="person-info">
-        <h3 className="person-name">{person.name}</h3>
-        {showBirthYear && person.birthYear && (
-          <p className="person-birth-year">{person.birthYear}</p>
+        <h3 className="person-name">{person.getDisplayName()}</h3>
+        {showDeceasedStatus && person.isDeceased && (
+          <p className="person-status">✝</p>
         )}
       </div>
     </div>
@@ -193,10 +193,10 @@ const FamilyTreeComponent = ({
               )}
             </div>
 
-            <h2 className="modal-person-name">{expandedPerson.name}</h2>
+            <h2 className="modal-person-name">{expandedPerson.getDisplayName()}</h2>
             
-            {showBirthYear && expandedPerson.birthYear && (
-              <p className="modal-person-birth-year">Nacido en {expandedPerson.birthYear}</p>
+            {showDeceasedStatus && expandedPerson.isDeceased && (
+              <p className="modal-person-status">✝</p>
             )}
 
             <div className="modal-person-info">
@@ -217,7 +217,7 @@ const FamilyTreeComponent = ({
               {expandedPerson.spouse && (
                 <div className="modal-info-item">
                   <strong>Cónyuge</strong>
-                  <span>{expandedPerson.spouse.name}</span>
+                  <span>{expandedPerson.spouse.getDisplayName()}</span>
                 </div>
               )}
               
@@ -225,7 +225,7 @@ const FamilyTreeComponent = ({
                 <strong>Hijos</strong>
                 <span>
                   {expandedPerson.children.length > 0 
-                    ? expandedPerson.children.map(c => c.name).join(', ')
+                    ? expandedPerson.children.map(c => c.getDisplayName()).join(', ')
                     : 'No tiene hijos'
                   }
                 </span>
@@ -242,11 +242,11 @@ const FamilyTreeComponent = ({
                       className="family-nav-button"
                       onClick={() => loadNewFamily(
                         getNewFamilyIds(expandedPerson), 
-                        expandedPerson.name
+                        expandedPerson.getDisplayName()
                       )}
                     >
                       {expandedPerson.spouse 
-                        ? `👨‍👩‍👧‍👦 Familia de ${expandedPerson.name}` 
+                        ? `👨‍👩‍👧‍👦 Familia de ${expandedPerson.getDisplayName()}` 
                         : `👤 Como padre/madre`
                       }
                     </button>
@@ -254,8 +254,8 @@ const FamilyTreeComponent = ({
                     <div className="current-family-indicator">
                       <span className="emoji">📍</span>
                       Ya estás viendo {expandedPerson.spouse 
-                        ? `la familia de ${expandedPerson.name}` 
-                        : `a ${expandedPerson.name} como padre/madre`
+                        ? `la familia de ${expandedPerson.getDisplayName()}` 
+                        : `a ${expandedPerson.getDisplayName()} como padre/madre`
                       }
                     </div>
                   )}

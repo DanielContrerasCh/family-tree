@@ -144,7 +144,7 @@ function FamilyTree() {
                     familyData={familyData}
                     parentIds={['salvador-alvarez-pulido', 'regina-mejia-mendoza']}
                     title="Familia Álvarez Mejía"
-                    showBirthYear={true}
+                    showDeceasedStatus={true}
                     onPersonClick={(person) => {
                         console.log('Persona seleccionada:', person);
                     }}
