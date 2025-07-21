@@ -142,7 +142,7 @@ function FamilyTree() {
             >
                 <FamilyTreeComponent
                     familyData={familyData}
-                    parentIds={['juan-alvarez', 'maria-mejia']}
+                    parentIds={['salvador-alvarez-pulido', 'regina-mejia-mendoza']}
                     title="Familia Álvarez Mejía"
                     showBirthYear={true}
                     onPersonClick={(person) => {

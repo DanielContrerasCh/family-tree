@@ -99,41 +99,228 @@ class Family {
 // Instancia de la familia con datos de ejemplo
 const familyData = new Family();
 
-// Agregar miembros de la familia Álvarez Mejía
-// Abuelos/Padres principales
-familyData.addMember('juan-alvarez', 'Juan Álvarez', 1950, 'https://picsum.photos/150/150?random=1', 'juan.alvarez@email.com', '+52 55 1234 5678');
-familyData.addMember('maria-mejia', 'María Mejía', 1952, 'https://picsum.photos/150/150?random=2', 'maria.mejia@email.com', '+52 55 2345 6789');
+// Familia Álvarez Mejía
+familyData.addMember('salvador-alvarez-pulido', 'Salvador Álvarez Pulido', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('regina-mejia-mendoza', 'Regina Mejía Mendoza', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('salvador-alvarez', 'regina-mejia');
 
-// Hijos de Juan y María
-familyData.addMember('pepe-alvarez', 'Pepe Álvarez Mejía', 1975, 'https://picsum.photos/150/150?random=3', 'pepe.alvarez@email.com', '+52 55 3456 7890');
-familyData.addMember('luz-alvarez', 'Luz Álvarez Mejía', 1977, 'https://picsum.photos/150/150?random=4', 'luz.alvarez@email.com', '+52 55 4567 8901');
-familyData.addMember('dan-alvarez', 'Daniel Álvarez Mejía', 1980, 'https://picsum.photos/150/150?random=5', 'daniel.alvarez@email.com', '+52 55 5678 9012');
-familyData.addMember('itzel-alvarez', 'Itzel Álvarez Mejía', 1985, 'https://picsum.photos/150/150?random=6', 'itzel.alvarez@email.com', '+52 55 6789 0123');
+familyData.addMember('maria-del-refugio-alvarez-mejia', 'María del Refugío Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null); // 1
+familyData.addMember('maria-del-carmen-alvarez-mejia', 'María del Carmen Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null); // 3 
+familyData.addMember('francisca-alvarez-mejia', 'francisca Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null); // 2
+familyData.addMember('salvador-alvarez-mejia', 'Salvador Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null);  // 6
+familyData.addMember('maria-guadalupe-alvarez-mejia', 'María Guadalupe Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null); // 5
+familyData.addMember('ezequiel-alvarez-mejia', 'Ezequiel Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null); // 4
+familyData.addMember('luz-maria-alvarez-mejia', 'Luz María Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null); // 7
 
-// Establecer relaciones familiares
-familyData.addSpouseRelationship('juan-alvarez', 'maria-mejia');
-familyData.addRelationship('juan-alvarez', 'pepe-alvarez');
-familyData.addRelationship('juan-alvarez', 'luz-alvarez');
-familyData.addRelationship('juan-alvarez', 'dan-alvarez');
-familyData.addRelationship('juan-alvarez', 'itzel-alvarez');
-familyData.addRelationship('maria-mejia', 'pepe-alvarez');
-familyData.addRelationship('maria-mejia', 'luz-alvarez');
-familyData.addRelationship('maria-mejia', 'dan-alvarez');
-familyData.addRelationship('maria-mejia', 'itzel-alvarez');
+familyData.addRelationship('salvador-alvarez-pulido', 'maria-del-refugio-alvarez-mejia');
+familyData.addRelationship('salvador-alvarez-pulido', 'maria-del-carmen-alvarez-mejia');
+familyData.addRelationship('salvador-alvarez-pulido', 'francisca-alvarez-mejia');
+familyData.addRelationship('salvador-alvarez-pulido', 'salvador-alvarez-mejia');
+familyData.addRelationship('salvador-alvarez-pulido', 'maria-guadalupe-alvarez-mejia');
+familyData.addRelationship('salvador-alvarez-pulido', 'ezequiel-alvarez-mejia');
+familyData.addRelationship('salvador-alvarez-pulido', 'luz-maria-alvarez-mejia');
 
-// Agregar más familias si es necesario...
-// Familia Contreras Álvarez (ejemplo)
-familyData.addMember('carlos-contreras', 'Carlos Contreras', 1948, null, 'carlos.contreras@email.com', '+52 55 7890 1234');
-familyData.addMember('ana-alvarez', 'Ana Álvarez', 1950, null, 'ana.alvarez@email.com', '+52 55 8901 2345');
-familyData.addMember('luis-contreras', 'Luis Contreras Álvarez', 1972, null, 'luis.contreras@email.com', '+52 55 9012 3456');
-familyData.addMember('sofia-contreras', 'Sofía Contreras Álvarez', 1974, null, 'sofia.contreras@email.com', '+52 55 0123 4567');
-familyData.addRelationship('pepe-alvarez', 'carlos-contreras');
+familyData.addRelationship('regina-mejia-mendoza', 'maria-del-refugio-alvarez-mejia');
+familyData.addRelationship('regina-mejia-mendoza', 'maria-del-carmen-alvarez-mejia');
+familyData.addRelationship('regina-mejia-mendoza', 'francisca-alvarez-mejia');
+familyData.addRelationship('regina-mejia-mendoza', 'salvador-alvarez-mejia');
+familyData.addRelationship('regina-mejia-mendoza', 'maria-guadalupe-alvarez-mejia');
+familyData.addRelationship('regina-mejia-mendoza', 'ezequiel-alvarez-mejia');
+familyData.addRelationship('regina-mejia-mendoza', 'luz-maria-alvarez-mejia');
 
-familyData.addSpouseRelationship('carlos-contreras', 'ana-alvarez');
-familyData.addRelationship('carlos-contreras', 'luis-contreras');
-familyData.addRelationship('carlos-contreras', 'sofia-contreras');
-familyData.addRelationship('ana-alvarez', 'luis-contreras');
-familyData.addRelationship('ana-alvarez', 'sofia-contreras');
+// Familia Blanco Álvarez
+familyData.addMember('manuel-blanco-cuevas', 'Manuel Blanco Cuevas', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('maria-del-refugio-alvarez-mejia', 'manuel-blanco-cuevas');
+
+familyData.addMember('apolinar-blanco-alvarez', 'Apolinar Blanco Alvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 2
+familyData.addMember('gonzalo-blanco-alvarez', 'Gonzalo Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 4
+familyData.addMember('benita-blanco-alvarez', 'Benita Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 6
+familyData.addMember('maria-de-jesus-blanco-alvarez', 'María de Jesús Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 5
+familyData.addMember('maria-del-carmen-blanco-alvarez', 'María del Carmen Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 8
+familyData.addMember('francisca-blanco-alvarez', 'Francisca Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 7
+familyData.addMember('cecilia-blanco-alvarez', 'Cecilia Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 9
+familyData.addMember('juan-blanco-alvarez', 'Juan Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 10
+familyData.addMember('ruben-blanco-alvarez', 'Rubén Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 1
+familyData.addMember('maria-luisa-blanco-alvarez', 'María Luisa Blanco Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 3
+
+// Relaciones familiares Blanco Álvarez (hijos de María del Refugio y Manuel Blanco)
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'apolinar-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'gonzalo-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'benita-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'maria-de-jesus-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'maria-del-carmen-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'francisca-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'cecilia-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'juan-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'ruben-blanco-alvarez');
+familyData.addRelationship('maria-del-refugio-alvarez-mejia', 'maria-luisa-blanco-alvarez');
+
+familyData.addRelationship('manuel-blanco-cuevas', 'apolinar-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'gonzalo-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'benita-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'maria-de-jesus-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'maria-del-carmen-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'francisca-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'cecilia-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'juan-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'ruben-blanco-alvarez');
+familyData.addRelationship('manuel-blanco-cuevas', 'maria-luisa-blanco-alvarez');
+
+// Familia Castañeda Álvarez
+familyData.addMember('salvador-castañeda-espinosa', 'Salvador Castañeda Espinosa', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('maria-del-carmen-alvarez-mejia', 'salvador-castañeda-espinosa');
+
+familyData.addMember('david-castañeda-alvarez', 'David Castañeda Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 1
+familyData.addMember('jorge-castañeda-alvarez', 'Jorge Castañeda Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 2
+familyData.addMember('lucia-castañeda-alvarez', 'Lucía Castañeda Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 3
+familyData.addMember('gloria-castañeda-alvarez', 'Gloria Castañeda Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 4
+familyData.addMember('lourdes-castañeda-alvarez', 'Lourdes Castañeda Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 5
+
+// Relaciones familiares Castañeda Álvarez (hijos de María del Carmen y Salvador Castañeda)
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'david-castañeda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'jorge-castañeda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'lucia-castañeda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'gloria-castañeda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'lourdes-castañeda-alvarez');
+
+familyData.addRelationship('salvador-castañeda-espinosa', 'david-castañeda-alvarez');
+familyData.addRelationship('salvador-castañeda-espinosa', 'jorge-castañeda-alvarez');
+familyData.addRelationship('salvador-castañeda-espinosa', 'lucia-castañeda-alvarez');
+familyData.addRelationship('salvador-castañeda-espinosa', 'gloria-castañeda-alvarez');
+familyData.addRelationship('salvador-castañeda-espinosa', 'lourdes-castañeda-alvarez');
+
+// Familia Contreras Álvarez
+familyData.addMember('jose-contreras-galarza', 'José Contreras Galarza', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('francisca-alvarez-mejia', 'jose-contreras-galarza');
+
+familyData.addMember('arturo-contreras-alvarez', 'Arturo Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 11
+familyData.addMember('aurora-contreras-alvarez', 'Aurora Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 1
+familyData.addMember('maria-martina-contreras-alvarez', 'María Martina Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 10
+familyData.addMember('juan-carlos-contreras-alvarez', 'Juan Carlos Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 9
+familyData.addMember('ana-maria-contreras-alvarez', 'Ana María Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 2
+familyData.addMember('evangelina-contreras-alvarez', 'Evangelina Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 8
+familyData.addMember('jose-luis-contreras-alvarez', 'José Luis Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 3
+familyData.addMember('salvador-contreras-alvarez', 'Salvador Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 7
+familyData.addMember('bertha-contreras-alvarez', 'Bertha Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 5
+familyData.addMember('francisco-javier-contreras-alvarez', 'Francisco Javier Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 4
+familyData.addMember('jose-de-jesus-contreras-alvarez', 'José de Jesús Contreras Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null); // 6
+
+// Relaciones familiares Contreras Álvarez (hijos de Francisca y José Contreras)
+familyData.addRelationship('francisca-alvarez-mejia', 'arturo-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'aurora-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'maria-martina-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'juan-carlos-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'ana-maria-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'evangelina-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'jose-luis-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'salvador-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'bertha-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'francisco-javier-contreras-alvarez');
+familyData.addRelationship('francisca-alvarez-mejia', 'jose-de-jesus-contreras-alvarez');
+
+familyData.addRelationship('jose-contreras-galarza', 'arturo-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'aurora-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'maria-martina-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'juan-carlos-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'ana-maria-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'evangelina-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'jose-luis-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'salvador-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'bertha-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'francisco-javier-contreras-alvarez');
+familyData.addRelationship('jose-contreras-galarza', 'jose-de-jesus-contreras-alvarez');
+
+// Familia Alvarez Ramos
+familyData.addMember('judith-ramos-parra', 'Judith Ramos Parra', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('salvador-alvarez-mejia', 'judith-ramos-parra');
+
+familyData.addMember('rodrigo-alvarez-ramos', 'Rodrigo Álvarez Ramos', null, 'https://picsum.photos/150/150?random=1', null, null); // 3
+familyData.addMember('salvador-alvarez-ramos', 'Salvador Álvarez Ramos', null, 'https://picsum.photos/150/150?random=1', null, null); // 1
+familyData.addMember('judith-alvarez-ramos', 'Judith Álvarez Ramos', null, 'https://picsum.photos/150/150?random=1', null, null); // 2
+
+// Relaciones familiares Álvarez Ramos (hijos de Salvador y Judith)
+familyData.addRelationship('salvador-alvarez-mejia', 'rodrigo-alvarez-ramos');
+familyData.addRelationship('salvador-alvarez-mejia', 'salvador-alvarez-ramos');
+familyData.addRelationship('salvador-alvarez-mejia', 'judith-alvarez-ramos');
+
+familyData.addRelationship('judith-ramos-parra', 'rodrigo-alvarez-ramos');
+familyData.addRelationship('judith-ramos-parra', 'salvador-alvarez-ramos');
+familyData.addRelationship('judith-ramos-parra', 'judith-alvarez-ramos');
+
+// Familia García Álvarez
+familyData.addMember('rafael-garcia-delgado', 'Rafael García Delgado', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('maria-guadalupe-alvarez-mejia', 'rafael-garcia-delgado');
+
+familyData.addMember('regina-guadalupe-garcia-alvarez', 'Regina Guadalupe García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('rodrigo-salvador-garcia-alvarez', 'Rodrigo Salvador García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('marisela-garcia-alvarez', 'Marisela García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('miguel-angel-garcia-alvarez', 'Miguel Ángel García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('rafael-garcia-alvarez', 'Rafael García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('antonio-garcia-alvarez', 'Antonio García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('ofelia-garcia-alvarez', 'Ofelia García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('rosa-maria-garcia-alvarez', 'Rosa María García Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+
+// Relaciones familiares García Álvarez (hijos de María Guadalupe y Rafael García)
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'regina-guadalupe-garcia-alvarez');
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'rodrigo-salvador-garcia-alvarez');
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'marisela-garcia-alvarez');
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'miguel-angel-garcia-alvarez');
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'rafael-garcia-alvarez');
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'antonio-garcia-alvarez');
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'ofelia-garcia-alvarez');
+familyData.addRelationship('maria-guadalupe-alvarez-mejia', 'rosa-maria-garcia-alvarez');
+
+familyData.addRelationship('rafael-garcia-delgado', 'regina-guadalupe-garcia-alvarez');
+familyData.addRelationship('rafael-garcia-delgado', 'rodrigo-salvador-garcia-alvarez');
+familyData.addRelationship('rafael-garcia-delgado', 'marisela-garcia-alvarez');
+familyData.addRelationship('rafael-garcia-delgado', 'miguel-angel-garcia-alvarez');
+familyData.addRelationship('rafael-garcia-delgado', 'rafael-garcia-alvarez');
+familyData.addRelationship('rafael-garcia-delgado', 'antonio-garcia-alvarez');
+familyData.addRelationship('rafael-garcia-delgado', 'ofelia-garcia-alvarez');
+familyData.addRelationship('rafael-garcia-delgado', 'rosa-maria-garcia-alvarez');
+
+// Familia Álvarez Cejudo
+familyData.addMember('ezequiel-alvarez-mejia', 'Ezequiel Álvarez Mejía', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('yolanda-cejudo-uribe', 'Yolanda Cejudo Uribe', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('ezequiel-alvarez-mejia', 'yolanda-cejudo-uribe');
+
+familyData.addMember('cuauhtemoc-alvarez-cejudo', 'Cuauhtémoc Álvarez Cejudo', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('iztaccihuatl-alvarez-cejudo', 'Iztaccíhuatl Álvarez Cejudo', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('netzahualcoyotl-alvarez-cejudo', 'Nezahualcóyotl Álvarez Cejudo', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('cuitlahuac-alvarez-cejudo', 'Cuitláhuac Álvarez Cejudo', null, 'https://picsum.photos/150/150?random=1', null, null);
+
+// Relaciones familiares Álvarez Cejudo (hijos de Ezequiel y Yolanda)
+familyData.addRelationship('ezequiel-alvarez-mejia', 'cuauhtemoc-alvarez-cejudo');
+familyData.addRelationship('ezequiel-alvarez-mejia', 'iztaccihuatl-alvarez-cejudo');
+familyData.addRelationship('ezequiel-alvarez-mejia', 'netzahualcoyotl-alvarez-cejudo');
+familyData.addRelationship('ezequiel-alvarez-mejia', 'cuitlahuac-alvarez-cejudo');
+
+familyData.addRelationship('yolanda-cejudo-uribe', 'cuauhtemoc-alvarez-cejudo');
+familyData.addRelationship('yolanda-cejudo-uribe', 'iztaccihuatl-alvarez-cejudo');
+familyData.addRelationship('yolanda-cejudo-uribe', 'netzahualcoyotl-alvarez-cejudo');
+familyData.addRelationship('yolanda-cejudo-uribe', 'cuitlahuac-alvarez-cejudo');
+
+// Familia Ortega Álvarez
+familyData.addMember('alejando-ortega-muñoz', 'Alejando Ortega Muñoz', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addSpouseRelationship('luz-maria-alvarez-mejia', 'alejando-ortega-muñoz');
+
+familyData.addMember('ezequiel-ernesto-ortega-alvarez', 'Ezequiel Ernesto Ortega Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('regina-de-la-luz-ortega-alvarez', 'Regina de la Luz Ortega Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('alejandro-ortega-alvarez', 'Alejandro Ortega Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+familyData.addMember('hector-manuel-ortega-alvarez', 'Héctor Manuel Ortega Álvarez', null, 'https://picsum.photos/150/150?random=1', null, null);
+
+// Relaciones familiares Ortega Álvarez (hijos de Luz María y Alejandro Ortega)
+familyData.addRelationship('luz-maria-alvarez-mejia', 'ezequiel-ernesto-ortega-alvarez');
+familyData.addRelationship('luz-maria-alvarez-mejia', 'regina-de-la-luz-ortega-alvarez');
+familyData.addRelationship('luz-maria-alvarez-mejia', 'alejandro-ortega-alvarez');
+familyData.addRelationship('luz-maria-alvarez-mejia', 'hector-manuel-ortega-alvarez');
+
+familyData.addRelationship('alejando-ortega-muñoz', 'ezequiel-ernesto-ortega-alvarez');
+familyData.addRelationship('alejando-ortega-muñoz', 'regina-de-la-luz-ortega-alvarez');
+familyData.addRelationship('alejando-ortega-muñoz', 'alejandro-ortega-alvarez');
+familyData.addRelationship('alejando-ortega-muñoz', 'hector-manuel-ortega-alvarez');
+
+
 
 export default familyData;
 export { Family, Person };
