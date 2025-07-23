@@ -19,6 +19,19 @@ const FamilyTreeComponent = ({
   const familyTree = familyData.getFamilyTree(currentParentIds);
   const { parents, children } = familyTree;
 
+  // Función para determinar el título dinámico
+  const getCurrentTitle = () => {
+    // Solo mostrar título especial para la familia inicial (Álvarez Mejía)
+    // Verificar si es la familia inicial comparando con los IDs originales
+    if (familyHistory.length === 0 && JSON.stringify(currentParentIds.sort()) === JSON.stringify(parentIds.sort())) {
+      return title; // Usar el título original pasado como prop
+    }
+    // Para todas las demás familias, usar un título genérico
+    return "Árbol Familiar";
+  };
+
+  const currentTitle = getCurrentTitle();
+
   const handlePersonClick = (person) => {
     // Abrir directamente el modal expandido
     setExpandedPerson(person);
@@ -124,7 +137,7 @@ const FamilyTreeComponent = ({
       )}
       
       <div className="family-tree-header">
-        <h2 className="family-tree-title">{title}</h2>
+        <h2 className="family-tree-title">{currentTitle}</h2>
       </div>
       
       {/* Sección de Padres */}
