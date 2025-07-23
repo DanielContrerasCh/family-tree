@@ -26,6 +26,7 @@ const Gallery = ({
   duration = 0.6,
   showThumbnails = true,
   enableAutoplay = true,
+  header = null, // Nuevo prop para el header
 }) => {
   // Validación temprana para evitar errores
   if (!items || items.length === 0) {
@@ -99,6 +100,9 @@ const Gallery = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Header section */}
+      {header && header}
+      
       {/* Imagen principal */}
       <div className="main-image-container">
         <img

@@ -3,14 +3,46 @@
   flex-wrap: wrap;
   white-space: pre-wrap;
   position: relative;
-  background-color: black;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
   align-items: center;
   justify-content: center;
   width: 100%;
   max-width: 100%;
+}
+
+/* Clase específica para la galería */
+.gallery-rotating-text {
+  background-color: white !important;
+  color: black !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+}
+
+.gallery-rotating-text .text-rotate-element {
+  color: black !important;
+}
+
+.gallery-rotating-text .text-rotate-word {
+  color: black !important;
+}
+
+/* Estilos específicos para el rotating text en la galería */
+.text-rotate.bg-white {
+  background-color: white !important;
+}
+
+.text-rotate.text-black {
+  color: black !important;
+}
+
+/* Asegurar que los elementos hijos también tengan el color correcto */
+.text-rotate.text-black .text-rotate-element {
+  color: black !important;
+}
+
+.text-rotate.text-black .text-rotate-word {
+  color: black !important;
 }
 
 .text-rotate-sr-only {
