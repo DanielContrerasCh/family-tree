@@ -4,11 +4,12 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Typography from '@mui/material/Typography';
 
-export default function PrimaryHeader({ text, children }) {
+export default function PrimaryHeader({ text, children, className = '' }) {
   return (
     <Typography 
       variant="h1" 
       component="h1"
+      className={`primary-header ${className}`}
       sx={{
         display: 'flex',
         alignItems: 'center',

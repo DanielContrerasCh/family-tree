@@ -78,6 +78,12 @@ const items = [
         img: "https://picsum.photos/800/600?random=12",
         height: 400,
         url: "#"
+    },
+    {
+        id: 'rotating-text',
+        isRotatingText: true,
+        height: 400,
+        url: "#"
     }
 ];
 
@@ -106,42 +112,30 @@ function FamilyTree() {
                     duration={0.6}
                     showThumbnails={true}
                     enableAutoplay={true}
+                    rotatingTextComponent={
+                        <PrimaryHeader text='' className="gallery-rotating-header">
+                            <RotatingText
+                            texts={['Álvarez Mejía', 
+                                'Contreras Álvarez',
+                                'Ortega Álvarez',
+                                'Álvarez Cejudo',
+                                'Álvarez Ramos',
+                                'Castañeda Álvarez',
+                                'García Álvarez',
+                                'Blanco Álvarez',]}
+                            mainClassName="gallery-rotating-text overflow-hidden justify-center"
+                            staggerFrom={"last"}
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "-100%" }}
+                            staggerDuration={0.025}
+                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            rotationInterval={3000}
+                        />
+                        </PrimaryHeader>
+                    }
                 />
-            </BoxBasic>
-
-            {/* Rotating Text Section */}
-            <BoxBasic 
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 2,
-                    padding: '40px 20px 40px 20px',
-                    minHeight: 'auto',
-                    background: 'transparent'
-                }}
-            >
-                <PrimaryHeader text=''>
-                    <RotatingText
-                    texts={['Álvarez Mejía', 
-                        'Contreras Álvarez',
-                        'Ortega Álvarez',
-                        'Álvarez Cejudo',
-                        'Álvarez Ramos',
-                        'Castañeda Álvarez',
-                        'García Álvarez',
-                        'Blanco Álvarez',]}
-                    mainClassName="gallery-rotating-text overflow-hidden justify-center"
-                    staggerFrom={"last"}
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={4000}
-                />
-                </PrimaryHeader>
             </BoxBasic>
 
             {/* Family Tree Section */}

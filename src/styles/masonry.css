@@ -253,3 +253,71 @@
     height: 38px;
   }
 }
+
+/* Estilos para el rotating text como slide */
+.rotating-text-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.rotating-text-slide h1,
+.rotating-text-slide .MuiTypography-root {
+  background: #000000 !important;
+  padding: 20px 40px !important;
+  border-radius: 15px !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+.gallery-rotating-header {
+  background: transparent !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  max-width: 1000px !important;
+  overflow: hidden !important;
+  padding: 20px !important;
+}
+
+.gallery-rotating-header * {
+  color: #ffffff !important;
+}
+
+.rotating-text-slide .gallery-rotating-text {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.rotating-text-slide .gallery-rotating-text * {
+  color: #ffffff !important;
+}
+
+.rotating-text-slide .text-rotate-element,
+.rotating-text-slide .text-rotate-word {
+  color: #ffffff !important;
+}
+
+/* Thumbnail especial para rotating text */
+.rotating-text-thumbnail {
+  background: #333333 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotating-text-icon {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.rotating-text-thumbnail.active .rotating-text-icon {
+  color: #ffffff;
+}

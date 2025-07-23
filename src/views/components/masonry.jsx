@@ -27,6 +27,7 @@ const Gallery = ({
   showThumbnails = true,
   enableAutoplay = true,
   header = null, // Nuevo prop para el header
+  rotatingTextComponent = null, // Nuevo prop para el componente rotating text
 }) => {
   // Validación temprana para evitar errores
   if (!items || items.length === 0) {
@@ -103,13 +104,19 @@ const Gallery = ({
       {/* Header section */}
       {header && header}
       
-      {/* Imagen principal */}
+      {/* Imagen principal o rotating text */}
       <div className="main-image-container">
-        <img
-          src={currentItem.img}
-          alt={currentItem.name || `Image ${currentIndex + 1}`}
-          className="main-image"
-        />
+        {currentItem.isRotatingText ? (
+          <div className="rotating-text-slide">
+            {rotatingTextComponent}
+          </div>
+        ) : (
+          <img
+            src={currentItem.img}
+            alt={currentItem.name || `Image ${currentIndex + 1}`}
+            className="main-image"
+          />
+        )}
         
         {/* Controles de navegación */}
         <button 
@@ -148,13 +155,17 @@ const Gallery = ({
             {items.map((item, index) => (
               <div
                 key={item.id}
-                className={`thumbnail ${index === currentIndex ? 'active' : ''}`}
+                className={`thumbnail ${index === currentIndex ? 'active' : ''} ${item.isRotatingText ? 'rotating-text-thumbnail' : ''}`}
                 onClick={() => goToImage(index)}
               >
-                <img
-                  src={item.img}
-                  alt={item.name || `Thumbnail ${index + 1}`}
-                />
+                {item.isRotatingText ? (
+                  <div className="rotating-text-icon">T</div>
+                ) : (
+                  <img
+                    src={item.img}
+                    alt={item.name || `Thumbnail ${index + 1}`}
+                  />
+                )}
               </div>
             ))}
           </div>
