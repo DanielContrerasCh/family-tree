@@ -6,6 +6,7 @@ export default function BoxBasic({ children, sx = {} }) {
     m: 0,
     width: '100%',
     minHeight: '100vh',
+    backgroundColor: '#fefefe',
   };
 
   return (

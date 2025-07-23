@@ -1,0 +1,25 @@
+/* Global CSS Reset and Background */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #fefefe;
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root {
+  background-color: #fefefe;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Asegurar que todos los contenedores tengan fondo blanco yeso */
+.MuiBox-root {
+  background-color: inherit;
+}

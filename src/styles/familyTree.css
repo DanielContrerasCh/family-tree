@@ -1,14 +1,13 @@
 /* Estilos para el componente FamilyTree */
 
 .family-tree-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 4rem;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: transparent;
   position: relative;
+  min-height: 100vh;
 }
 
 .family-tree-title {
@@ -32,9 +31,9 @@
 
 .back-button {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  top: 2rem;
+  right: 4rem;
+  background: linear-gradient(135deg, #3498db, #2980b9);
   color: white;
   border: none;
   padding: 0.7rem 1.2rem;
@@ -43,14 +42,14 @@
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 10;
 }
 
 .back-button:hover {
-  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+  background: linear-gradient(135deg, #2980b9, #3498db);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Navegación en el modal */

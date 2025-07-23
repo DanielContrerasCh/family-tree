@@ -85,56 +85,69 @@ const items = [
 function FamilyTree() {
 
     return (
-        <BoxBasic>
-            {/* Gallery Section with integrated header */}
-            <Gallery
-                items={items}
-                autoPlayInterval={3000}
-                ease="power2.out"
-                duration={0.6}
-                showThumbnails={true}
-                enableAutoplay={true}
-                header={
-                    <BoxBasic 
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            gap: 2,
-                            padding: '40px 20px 20px 20px',
-                            minHeight: 'auto',
-                            background: 'transparent'
-                        }}
-                    >
-                        <PrimaryHeader text=''>
-                            <RotatingText
-                            texts={['Álvarez Mejía', 
-                                'Contreras Álvarez',
-                                'Ortega Álvarez',
-                                'Álvarez Cejudo',
-                                'Álvarez Ramos',
-                                'Castañeda Álvarez',
-                                'García Álvarez',
-                                'Blanco Álvarez',]}
-                            mainClassName="gallery-rotating-text overflow-hidden justify-center"
-                            staggerFrom={"last"}
-                            initial={{ y: "100%" }}
-                            animate={{ y: 0 }}
-                            exit={{ y: "-120%" }}
-                            staggerDuration={0.025}
-                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                            rotationInterval={4000}
-                        />
-                        </PrimaryHeader>
-                    </BoxBasic>
-                }
-            />
+        <BoxBasic 
+            sx={{
+                background: '#fefefe',
+                minHeight: '100vh'
+            }}
+        >
+            {/* Gallery Section - Full Width */}
+            <BoxBasic 
+                sx={{
+                    padding: '0px',
+                    minHeight: 'auto',
+                    width: '100%'
+                }}
+            >
+                <Gallery
+                    items={items}
+                    autoPlayInterval={3000}
+                    ease="power2.out"
+                    duration={0.6}
+                    showThumbnails={true}
+                    enableAutoplay={true}
+                />
+            </BoxBasic>
+
+            {/* Rotating Text Section */}
+            <BoxBasic 
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 2,
+                    padding: '40px 20px 40px 20px',
+                    minHeight: 'auto',
+                    background: 'transparent'
+                }}
+            >
+                <PrimaryHeader text=''>
+                    <RotatingText
+                    texts={['Álvarez Mejía', 
+                        'Contreras Álvarez',
+                        'Ortega Álvarez',
+                        'Álvarez Cejudo',
+                        'Álvarez Ramos',
+                        'Castañeda Álvarez',
+                        'García Álvarez',
+                        'Blanco Álvarez',]}
+                    mainClassName="gallery-rotating-text overflow-hidden justify-center"
+                    staggerFrom={"last"}
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-120%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    rotationInterval={4000}
+                />
+                </PrimaryHeader>
+            </BoxBasic>
 
             {/* Family Tree Section */}
             <BoxBasic 
                 sx={{
-                    padding: '0px 20px 40px 20px',
+                    padding: '0px',
                     minHeight: 'auto'
                 }}
             >

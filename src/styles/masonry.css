@@ -10,23 +10,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #000;
-  color: white;
+  background: transparent;
+  color: #333333;
 }
 
 /* Contenedor de la imagen principal */
 .main-image-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  height: 60vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
-  border-radius: 12px;
+  margin: 0;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Imagen principal */
@@ -35,7 +32,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 12px;
   filter: brightness(0.95) contrast(1.1);
   transition: filter 0.3s ease;
 }
@@ -49,7 +45,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   border: none;
   width: 50px;
@@ -66,7 +62,7 @@
 }
 
 .nav-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.9);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -93,36 +89,36 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.4);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .indicator.active {
-  background: white;
-  border-color: white;
+  background: #333333;
+  border-color: #333333;
 }
 
 .indicator:hover {
-  border-color: white;
+  border-color: #333333;
   transform: scale(1.2);
 }
 
 /* Contenedor de miniaturas */
 .thumbnails-container {
   width: 100%;
-  max-width: 1200px;
   overflow: hidden;
+  padding: 0 20px;
 }
 
 .thumbnails {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   overflow-x: auto;
-  padding: 10px;
+  padding: 20px 0;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
 }
 
 .thumbnails::-webkit-scrollbar {
@@ -134,7 +130,7 @@
 }
 
 .thumbnails::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 3px;
 }
 
@@ -152,7 +148,7 @@
 }
 
 .thumbnail.active {
-  border-color: white;
+  border-color: #333333;
   opacity: 1;
   transform: scale(1.1);
 }
@@ -191,7 +187,7 @@
 }
 
 .autoplay-toggle:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.9);
   transform: scale(1.1);
 }
 
