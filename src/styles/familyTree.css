@@ -196,6 +196,34 @@
   align-items: center;
 }
 
+/* Sección de foto familiar */
+.family-photo-section {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.family-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.family-photo {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #ffffff;
+}
+
+.family-photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
 /* Tarjetas de personas */
 .person-card {
   background: white;

@@ -107,6 +107,45 @@ class Family {
       children: allChildren
     };
   }
+
+  // Obtener foto familiar basada en los padres de la familia
+  getFamilyPhoto(parentIds) {
+    // Mapeo de fotos familiares por familia
+    const familyPhotos = {
+      // Familia principal (Salvador y Regina)
+      'salvador-alvarez-pulido_regina-mejia-mendoza': './src/views/public/familyPhotos/famAlvarezMejia.jpg',
+      'regina-mejia-mendoza_salvador-alvarez-pulido': './src/views/public/familyPhotos/famAlvarezMejia.jpg',
+
+      // Familia Blanco Álvarez (María del Refugio y Manuel)
+      'maria-del-refugio-alvarez-mejia_manuel-blanco-cuevas': './src/views/public/familyPhotos/refugio-manuel-family.jpg',
+      'manuel-blanco-cuevas_maria-del-refugio-alvarez-mejia': './src/views/public/familyPhotos/refugio-manuel-family.jpg',
+      
+      // Familia Castañeda Álvarez (María del Carmen y Salvador Castañeda)
+      'maria-del-carmen-alvarez-mejia_salvador-castañeda-espinosa': './src/views/public/familyPhotos/carmen-salvador-family.jpg',
+      
+      // Familia García Álvarez (Francisca y Antonio García)
+      'francisca-alvarez-mejia_antonio-garcia-villalvazo': './src/views/public/familyPhotos/francisca-antonio-family.jpg',
+      
+      // Familia Contreras Álvarez (Salvador Álvarez Mejía y María de los Ángeles)
+      'salvador-alvarez-mejia_maria-de-los-angeles-contreras-garcia': './src/views/public/familyPhotos/salvador-angeles-family.jpg',
+      
+      // Agregar más familias según sea necesario
+      'juan-carlos-contreras-alvarez_monica-chavez-hernandez': 'https://picsum.photos/150/150?random=1',
+
+      'jose-luis-contreras-alvarez': 'https://picsum.photos/150/150?random=2',
+
+      'flor-margarita-garcia-maldonado': './src/views/public/familyPhotos/famOcegueraGarcia.jpg',
+
+      'cynthia-maria-garcia-maldonado_ignis-castillo-correa': './src/views/public/familyPhotos/famCastilloGarcia.jpg',
+      'marisela-garcia-alvarez': './src/views/public/familyPhotos/famMariselaGarciaAlvarez.jpg' 
+    };
+
+    // Crear clave única para la pareja de padres (ordenada alfabéticamente)
+    const sortedParentIds = [...parentIds].sort();
+    const familyKey = sortedParentIds.join('_');
+    
+    return familyPhotos[familyKey] || null;
+  }
 }
 
 // Instancia de la familia con datos de ejemplo
@@ -610,6 +649,14 @@ familyData.addRelationship('rafael-garcia-delgado', 'rafael-garcia-alvarez');
 familyData.addRelationship('rafael-garcia-delgado', 'antonio-garcia-alvarez');
 familyData.addRelationship('rafael-garcia-delgado', 'ofelia-garcia-alvarez');
 familyData.addRelationship('rafael-garcia-delgado', 'rosa-maria-garcia-alvarez');
+
+// Hijos de marisela García Álvarez
+familyData.addMember('luis-marisela-garcia', 'Luis', false, '/src/views/public/luisMariselaGarcia.jpg', null, null, 1);
+familyData.addMember('rafael-marisela-garcia', 'Rafael', false, '/src/views/public/rafaelMariselaGarcia.jpg', null, null, 2);
+
+// Relaciones familiares hijos de marisela García Álvarez
+familyData.addRelationship('marisela-garcia-alvarez', 'luis-marisela-garcia');
+familyData.addRelationship('marisela-garcia-alvarez', 'rafael-marisela-garcia');
 
 // Pareja de Rafael García Álvarez
 familyData.addMember('patricia-villalvazo-sanchez', 'Patricia Villalvazo Sánchez', false, '/src/views/public/patriciaVillalvazoSanchez.jpg', null, null, 1);

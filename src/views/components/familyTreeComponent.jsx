@@ -185,6 +185,26 @@ const FamilyTreeComponent = ({
         </div>
       )}
 
+      {/* Foto Familiar */}
+      {(() => {
+        const familyPhoto = familyData.getFamilyPhoto(currentParentIds);
+        return familyPhoto && (
+          <div className="family-photo-section">
+            <h3 className="section-title">Foto Familiar</h3>
+            <div className="family-photo-container">
+              <img 
+                src={familyPhoto} 
+                alt={`Foto familiar de ${parents.map(p => p.getDisplayName()).join(' y ')}`}
+                className="family-photo"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+            </div>
+          </div>
+        );
+      })()}
+
       {/* Modal expandido */}
       {expandedPerson && (
         <div className="person-modal-overlay" onClick={handleModalOverlayClick}>
