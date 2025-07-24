@@ -262,6 +262,22 @@
   align-items: center;
   justify-content: center;
   background: transparent;
+  position: relative;
+  background-image: url('../views/public/salvadorAlvarezMejia.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rotating-text-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
 }
 
 .rotating-text-slide h1,
@@ -281,10 +297,14 @@
   max-width: 1000px !important;
   overflow: hidden !important;
   padding: 20px !important;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .gallery-rotating-header * {
   color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
 }
 
 .rotating-text-slide .gallery-rotating-text {
