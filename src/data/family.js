@@ -112,32 +112,24 @@ class Family {
   getFamilyPhoto(parentIds) {
     // Mapeo de fotos familiares por familia
     const familyPhotos = {
-      // Familia principal (Salvador y Regina)
-      'salvador-alvarez-pulido_regina-mejia-mendoza': './src/views/public/familyPhotos/famAlvarezMejia.jpg',
-      'regina-mejia-mendoza_salvador-alvarez-pulido': './src/views/public/familyPhotos/famAlvarezMejia.jpg',
-
-      // Familia Blanco Álvarez (María del Refugio y Manuel)
-      'maria-del-refugio-alvarez-mejia_manuel-blanco-cuevas': './src/views/public/familyPhotos/refugio-manuel-family.jpg',
-      'manuel-blanco-cuevas_maria-del-refugio-alvarez-mejia': './src/views/public/familyPhotos/refugio-manuel-family.jpg',
-      
-      // Familia Castañeda Álvarez (María del Carmen y Salvador Castañeda)
-      'maria-del-carmen-alvarez-mejia_salvador-castañeda-espinosa': './src/views/public/familyPhotos/carmen-salvador-family.jpg',
-      
-      // Familia García Álvarez (Francisca y Antonio García)
-      'francisca-alvarez-mejia_antonio-garcia-villalvazo': './src/views/public/familyPhotos/francisca-antonio-family.jpg',
-      
-      // Familia Contreras Álvarez (Salvador Álvarez Mejía y María de los Ángeles)
-      'salvador-alvarez-mejia_maria-de-los-angeles-contreras-garcia': './src/views/public/familyPhotos/salvador-angeles-family.jpg',
-      
-      // Agregar más familias según sea necesario
-      'juan-carlos-contreras-alvarez_monica-chavez-hernandez': 'https://picsum.photos/150/150?random=1',
-
-      'jose-luis-contreras-alvarez': 'https://picsum.photos/150/150?random=2',
 
       'flor-margarita-garcia-maldonado': './src/views/public/familyPhotos/famOcegueraGarcia.jpg',
-
       'cynthia-maria-garcia-maldonado_ignis-castillo-correa': './src/views/public/familyPhotos/famCastilloGarcia.jpg',
-      'marisela-garcia-alvarez': './src/views/public/familyPhotos/famMariselaGarciaAlvarez.jpg' 
+      'marisela-garcia-alvarez': './src/views/public/familyPhotos/famMariselaGarciaAlvarez.jpg',
+      'regina-guadalupe-garcia-alvarez_marco-antonio-arballo-olivas': './src/views/public/familyPhotos/famArballoGarcia.jpg',
+      'marco-antonio-arballo-olivas_regina-guadalupe-garcia-alvarez': './src/views/public/familyPhotos/famArballoGarcia.jpg',
+      'doris-amezcua_jose-antonio-garcia-maldonado': './src/views/public/familyPhotos/famGarciaAmezcua.jpg',
+      'jose-antonio-garcia-maldonado_doris-amezcua': './src/views/public/familyPhotos/famGarciaAmezcua.jpg',
+      'rodrigo-salvador-garcia-alvarez_martha-vargas-espinoza': './src/views/public/familyPhotos/famGarciaVargas.jpg',
+      'martha-vargas-espinoza_rodrigo-salvador-garcia-alvarez': './src/views/public/familyPhotos/famGarciaVargas.jpg',
+      'rafael-manuel-garcia-maldonado_norma-duran': './src/views/public/familyPhotos/famGarciaDuran.jpg',
+      'norma-duran_rafael-manuel-garcia-maldonado': './src/views/public/familyPhotos/famGarciaDuran.jpg',
+      'laura-patricia-garcia-villalvazo_alberto-colazo': './src/views/public/familyPhotos/famColazoGarcia.jpg',
+      'alberto-colazo_laura-patricia-garcia-villalvazo': './src/views/public/familyPhotos/famColazoGarcia.jpg',
+      'david-castaneda-alvarez_guadalupe-perez': './src/views/public/familyPhotos/famCastanedaPerez.jpg',
+      'guadalupe-perez_david-castaneda-alvarez': './src/views/public/familyPhotos/famCastanedaPerez.jpg',
+      'alejandro-ortega-alvarez_lorena-estrella': './src/views/public/familyPhotos/famOrtegaEstrella.jpg',
+      'lorena-estrella_alejandro-ortega-alvarez': './src/views/public/familyPhotos/famOrtegaEstrella.jpg',
     };
 
     // Crear clave única para la pareja de padres (ordenada alfabéticamente)
@@ -222,31 +214,56 @@ familyData.addRelationship('manuel-blanco-cuevas', 'maria-luisa-blanco-alvarez')
 familyData.addRelationship('manuel-blanco-cuevas', 'alma-rosa-blanco-alvarez');
 
 // Familia de cecilia Blanco Álvarez
-familyData.addMember('alma-blanco-TODO', 'Alma Blanco TODO', false, '/src/views/public/almaBlancoTODO.jpg', null, null);
-familyData.addRelationship('cecilia-blanco-alvarez', 'alma-blanco-TODO');
+familyData.addMember('alma-carrido-blanco', 'Alma Carrillo Blanco', false, '/src/views/public/almaBlancoTODO.jpg', null, null, 1);
+familyData.addRelationship('cecilia-blanco-alvarez', 'alma-carrido-blanco');
+
+// Pareja de Alma Carrillo Blanco
+familyData.addMember('said-zamano-jaled', 'Said Zámano Jaled', false, '/src/views/public/saidZamanoJaled.jpg', null, null, 1);
+familyData.addSpouseRelationship('alma-carrido-blanco', 'said-zamano-jaled');
+
+// hija de alma Carrillo Blanco y Said Zámano Jaled
+familyData.addMember('saima-zamano-carrillo', 'Saima Zámano Carrillo', false, '/src/views/public/saimaZamanoCarrillo.jpg', null, null, 1);
+familyData.addRelationship('alma-carrido-blanco', 'saima-zamano-carrillo');
 
 // Familia Castañeda Álvarez
 familyData.addMember('salvador-castañeda-espinosa', 'Salvador Castañeda Espinosa', true, 'https://picsum.photos/150/150?random=1', null, null);
 familyData.addSpouseRelationship('maria-del-carmen-alvarez-mejia', 'salvador-castañeda-espinosa');
 
-familyData.addMember('david-castañeda-alvarez', 'David Castañeda Álvarez', false, '/src/views/public/davidCastanedaAlvarez.jpg', null, null, 1); // 1
-familyData.addMember('jorge-castañeda-alvarez', 'Jorge Castañeda Álvarez', true, 'https://picsum.photos/150/150?random=1', null, null, 2); // 2
-familyData.addMember('lucia-castañeda-alvarez', 'Lucía Castañeda Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 3); // 3
-familyData.addMember('gloria-castañeda-alvarez', 'Gloria Castañeda Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 4); // 4
-familyData.addMember('lourdes-castañeda-alvarez', 'Lourdes Castañeda Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 5); // 5
+familyData.addMember('david-castaneda-alvarez', 'David Castañeda Álvarez', false, '/src/views/public/davidCastanedaAlvarez.jpg', null, null, 1); // 1
+familyData.addMember('jorge-castaneda-alvarez', 'Jorge Castañeda Álvarez', true, 'https://picsum.photos/150/150?random=1', null, null, 2); // 2
+familyData.addMember('lucia-castaneda-alvarez', 'Lucía Castañeda Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 3); // 3
+familyData.addMember('gloria-castaneda-alvarez', 'Gloria Castañeda Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 4); // 4
+familyData.addMember('lourdes-castaneda-alvarez', 'Lourdes Castañeda Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 5); // 5
 
 // Relaciones familiares Castañeda Álvarez (hijos de María del Carmen y Salvador Castañeda)
-familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'david-castañeda-alvarez');
-familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'jorge-castañeda-alvarez');
-familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'lucia-castañeda-alvarez');
-familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'gloria-castañeda-alvarez');
-familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'lourdes-castañeda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'david-castaneda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'jorge-castaneda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'lucia-castaneda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'gloria-castaneda-alvarez');
+familyData.addRelationship('maria-del-carmen-alvarez-mejia', 'lourdes-castaneda-alvarez');
 
-familyData.addRelationship('salvador-castañeda-espinosa', 'david-castañeda-alvarez');
-familyData.addRelationship('salvador-castañeda-espinosa', 'jorge-castañeda-alvarez');
-familyData.addRelationship('salvador-castañeda-espinosa', 'lucia-castañeda-alvarez');
-familyData.addRelationship('salvador-castañeda-espinosa', 'gloria-castañeda-alvarez');
-familyData.addRelationship('salvador-castañeda-espinosa', 'lourdes-castañeda-alvarez');
+familyData.addRelationship('salvador-castaneda-espinosa', 'david-castaneda-alvarez');
+familyData.addRelationship('salvador-castaneda-espinosa', 'jorge-castaneda-alvarez');
+familyData.addRelationship('salvador-castaneda-espinosa', 'lucia-castaneda-alvarez');
+familyData.addRelationship('salvador-castaneda-espinosa', 'gloria-castaneda-alvarez');
+familyData.addRelationship('salvador-castaneda-espinosa', 'lourdes-castaneda-alvarez');
+
+// Pareja de david Castañeda Álvarez
+familyData.addMember('guadalupe-perez', 'Guadalupe Pérez', false, '/src/views/public/guadalupePerez.jpg', null, null, 1);
+familyData.addSpouseRelationship('david-castaneda-alvarez', 'guadalupe-perez');
+
+// hijos de David Castañeda Álvarez y Guadalupe Pérez
+familyData.addMember('salvador-castaneda-perez', 'Salvador Castañeda Pérez', false, '/src/views/public/salvadorCastanedaPerez.jpg', null, null, 1);
+familyData.addMember('laura-castaneda-perez', 'Laura Castañeda Pérez', false, '/src/views/public/lauraCastanedaPerez.jpg', null, null, 2);
+familyData.addMember('arturo-castaneda-perez', 'Arturo Castañeda Pérez', false, '/src/views/public/arturoCastanedaPerez.jpg', null, null, 3);
+
+// Relaciones familiares hijos de David Castañeda Álvarez y Guadalupe Pérez
+familyData.addRelationship('david-castañeda-alvarez', 'salvador-castaneda-perez');
+familyData.addRelationship('david-castañeda-alvarez', 'laura-castaneda-perez');
+familyData.addRelationship('david-castañeda-alvarez', 'arturo-castaneda-perez');
+familyData.addRelationship('guadalupe-perez', 'salvador-castaneda-perez');
+familyData.addRelationship('guadalupe-perez', 'laura-castaneda-perez');
+familyData.addRelationship('guadalupe-perez', 'arturo-castaneda-perez');
 
 // Familia Contreras Álvarez
 familyData.addMember('jose-contreras-galarza', 'José Contreras Galarza', true, '/src/views/public/joseContreras.jpg', null, null);
@@ -650,9 +667,58 @@ familyData.addRelationship('rafael-garcia-delgado', 'antonio-garcia-alvarez');
 familyData.addRelationship('rafael-garcia-delgado', 'ofelia-garcia-alvarez');
 familyData.addRelationship('rafael-garcia-delgado', 'rosa-maria-garcia-alvarez');
 
+// pareja de ofelia garcía álvarez
+familyData.addMember('lucio-magana', 'Lucio Ruíz Magaña', true, '/src/views/public/lucioMagana.jpg', null, null, 1);
+familyData.addSpouseRelationship('ofelia-garcia-alvarez', 'lucio-magana');
+
+// hijos de ofelia garcía álvarez
+familyData.addMember('mario-alberto-magana-garcia', 'Mario Alberto Ruíz García', true, '/src/views/public/marioAlbertoMaganaGarcia.jpg', null, null, 1);
+familyData.addMember('oscar-magana-garcia', 'Hugo Eduardo Ruíz García', false, '/src/views/public/oscarMaganaGarcia.jpg', null, null, 2);
+
+// Relaciones familiares hijos de ofelia garcía álvarez
+familyData.addRelationship('ofelia-garcia-alvarez', 'mario-alberto-magana-garcia');
+familyData.addRelationship('ofelia-garcia-alvarez', 'oscar-magana-garcia');
+familyData.addRelationship('lucio-magana', 'mario-alberto-magana-garcia');
+familyData.addRelationship('lucio-magana', 'oscar-magana-garcia');
+
+// pareja de rodrigo Salvador García Álvarez
+familyData.addMember('martha-vargas-espinoza', 'Martha Vargas Espinoza', false, '/src/views/public/marthaVargasEspinoza.jpg', null, null, 1);
+familyData.addSpouseRelationship('rodrigo-salvador-garcia-alvarez', 'martha-vargas-espinoza');
+
+// Hijos de Rodrigo Salvador García Álvarez
+familyData.addMember('rodrigo-salvador-garcia-vargas', 'Rodrigo Salvador García Vargas', false, '/src/views/public/rodrigoSalvadorGarciaVargas.jpg', null, null, 1);
+familyData.addMember('martha-valeria-garcia-vargas', 'Martha Valeria García Vargas', false, '/src/views/public/marthaValeriaGarciaVargas.jpg', null, null, 2);
+
+// Relaciones familiares hijos de Rodrigo Salvador García Álvarez
+familyData.addRelationship('rodrigo-salvador-garcia-alvarez', 'rodrigo-salvador-garcia-vargas');
+familyData.addRelationship('rodrigo-salvador-garcia-alvarez', 'martha-valeria-garcia-vargas');
+familyData.addRelationship('martha-vargas-espinoza', 'rodrigo-salvador-garcia-vargas');
+familyData.addRelationship('martha-vargas-espinoza', 'martha-valeria-garcia-vargas');
+
+// Pareja de miguel Ángel García Álvarez
+familyData.addMember('celia-bojorquez-leyva', 'Celia Bojórquez Leyva', false, '/src/views/public/celiaBojorquezLeyva.jpg', null, null, 1);
+familyData.addSpouseRelationship('miguel-angel-garcia-alvarez', 'celia-bojorquez-leyva');
+
+// pareja de Regina Guadalupe García Álvarez
+familyData.addMember('marco-antonio-arballo-olivas', 'Marco Antonio Arballo Olivas', false, '/src/views/public/marcoAntonioArballoOlivas.jpg', null, null, 1);
+familyData.addSpouseRelationship('regina-guadalupe-garcia-alvarez', 'marco-antonio-arballo-olivas');
+
+// Hijos de Regina Guadalupe García Álvarez
+familyData.addMember('elizabeth-guadalupe-arballo-garcia', 'Elizabeth Guadalupe Arballo García', false, '/src/views/public/elizabethGuadalupeArballoGarcia.jpg', null, null, 1);
+familyData.addMember('erick-antonio-arballo-garcia', 'Erik Antonio Arballo García', false, '/src/views/public/erikAntonioArballoGarcia.jpg', null, null, 2);
+familyData.addMember('emily-alexandra-arballo-garcia', 'Emily Alejandra Arballo García', false, '/src/views/public/emilyAlejandraArballoGarcia.jpg', null, null, 3);
+
+// Relaciones familiares hijos de Regina Guadalupe García Álvarez
+familyData.addRelationship('regina-guadalupe-garcia-alvarez', 'elizabeth-guadalupe-arballo-garcia');
+familyData.addRelationship('regina-guadalupe-garcia-alvarez', 'erick-antonio-arballo-garcia');
+familyData.addRelationship('regina-guadalupe-garcia-alvarez', 'emily-alexandra-arballo-garcia');
+familyData.addRelationship('marco-antonio-arballo-olivas', 'elizabeth-guadalupe-arballo-garcia');
+familyData.addRelationship('marco-antonio-arballo-olivas', 'erick-antonio-arballo-garcia');
+familyData.addRelationship('marco-antonio-arballo-olivas', 'emily-alexandra-arballo-garcia');
+
 // Hijos de marisela García Álvarez
-familyData.addMember('luis-marisela-garcia', 'Luis', false, '/src/views/public/luisMariselaGarcia.jpg', null, null, 1);
-familyData.addMember('rafael-marisela-garcia', 'Rafael', false, '/src/views/public/rafaelMariselaGarcia.jpg', null, null, 2);
+familyData.addMember('luis-marisela-garcia', 'Luis Fernando García Álvarez', false, '/src/views/public/luisMariselaGarcia.jpg', null, null, 1);
+familyData.addMember('rafael-marisela-garcia', 'Miguel Alejandro García Álvarez', false, '/src/views/public/rafaelMariselaGarcia.jpg', null, null, 2);
 
 // Relaciones familiares hijos de marisela García Álvarez
 familyData.addRelationship('marisela-garcia-alvarez', 'luis-marisela-garcia');
@@ -761,17 +827,20 @@ familyData.addMember('cecilio-sanchez', 'Cecilio Sánchez', false, '/src/views/p
 familyData.addSpouseRelationship('rosa-maria-garcia-alvarez', 'cecilio-sanchez');
 
 // Hijos de Rosa María García Álvarez
-familyData.addMember('cecilia-sanchez-garcia', 'Cecilia Sanchez García', false, 'https://picsum.photos/150/150?random=1', null, null, 1);
-familyData.addMember('rosa-sanchez-garcia', 'Rosa Sanchez García', false, 'https://picsum.photos/150/150?random=1', null, null, 2);
-familyData.addMember('luis-sanchez-garcia', 'Luis Sanchez García', false, 'https://picsum.photos/150/150?random=1', null, null, 3);
+familyData.addMember('cecilia-sanchez-garcia', 'Cecilia Sanchez García', false, '/src/views/public/cecilioSanchezGarcia.jpg', null, null, 1);
+familyData.addMember('rosa-sanchez-garcia', 'Rosa Sanchez García', false, '/src/views/public/rosaSanchezGarcia.jpg', null, null, 2);
+familyData.addMember('alejandro-sanchez-garcia', 'Alejandro Sanchez García', false, '/src/views/public/alejandroSanchezGarcia.jpg', null, null, 3);
+familyData.addMember('susi-sanchez-garcia', 'Susi Sanchez García', false, '/src/views/public/susiSanchezGarcia.jpg', null, null, 3);
 
 // Relaciones familiares hijos de Rosa María García Álvarez
 familyData.addRelationship('rosa-maria-garcia-alvarez', 'cecilia-sanchez-garcia');
 familyData.addRelationship('rosa-maria-garcia-alvarez', 'rosa-sanchez-garcia');
-familyData.addRelationship('rosa-maria-garcia-alvarez', 'luis-sanchez-garcia');
+familyData.addRelationship('rosa-maria-garcia-alvarez', 'alejandro-sanchez-garcia');
+familyData.addRelationship('rosa-maria-garcia-alvarez', 'susi-sanchez-garcia');
 familyData.addRelationship('cecilio-sanchez', 'cecilia-sanchez-garcia');
 familyData.addRelationship('cecilio-sanchez', 'rosa-sanchez-garcia');
-familyData.addRelationship('cecilio-sanchez', 'luis-sanchez-garcia');
+familyData.addRelationship('cecilio-sanchez', 'alejandro-sanchez-garcia');
+familyData.addRelationship('cecilio-sanchez', 'susi-sanchez-garcia');
 
 // Familia Álvarez Cejudo
 familyData.addMember('yolanda-cejudo-uribe', 'Yolanda Cejudo Uribe', false, '/src/views/public/yolandaCejudoUribe.jpg', null, null);
@@ -797,10 +866,10 @@ familyData.addRelationship('yolanda-cejudo-uribe', 'cuitlahuac-alvarez-cejudo');
 familyData.addMember('alejando-ortega-muñoz', 'Alejando Ortega Muñoz', true, 'https://picsum.photos/150/150?random=1', null, null);
 familyData.addSpouseRelationship('luz-maria-alvarez-mejia', 'alejando-ortega-muñoz');
 
-familyData.addMember('ezequiel-ernesto-ortega-alvarez', 'Ezequiel Ernesto Ortega Álvarez', true, 'https://picsum.photos/150/150?random=1', null, null, 1); // 1
-familyData.addMember('regina-de-la-luz-ortega-alvarez', 'Regina de la Luz Ortega Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 4); // 4
-familyData.addMember('alejandro-ortega-alvarez', 'Alejandro Ortega Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 3); // 3
-familyData.addMember('hector-manuel-ortega-alvarez', 'Héctor Manuel Ortega Álvarez', false, 'https://picsum.photos/150/150?random=1', null, null, 2); // 2
+familyData.addMember('ezequiel-ernesto-ortega-alvarez', 'Ezequiel Ernesto Ortega Álvarez', true, '/src/views/public/ezequielErnestoOrtegaAlvarez.jpg', null, null, 1); // 1
+familyData.addMember('regina-de-la-luz-ortega-alvarez', 'Regina de la Luz Ortega Álvarez', false, '/src/views/public/reginaDeLaLuzOrtegaAlvarez.jpg', null, null, 4); // 4
+familyData.addMember('alejandro-ortega-alvarez', 'Alejandro Ortega Álvarez', false, '/src/views/public/alejandroOrtegaAlvarez.jpg', null, null, 3); // 3
+familyData.addMember('hector-manuel-ortega-alvarez', 'Héctor Manuel Ortega Álvarez', false, '/src/views/public/hectorManuelOrtegaAlvarez.jpg', null, null, 2); // 2
 
 // Relaciones familiares Ortega Álvarez (hijos de Luz María y Alejandro Ortega)
 familyData.addRelationship('luz-maria-alvarez-mejia', 'ezequiel-ernesto-ortega-alvarez');
@@ -813,7 +882,18 @@ familyData.addRelationship('alejando-ortega-muñoz', 'regina-de-la-luz-ortega-al
 familyData.addRelationship('alejando-ortega-muñoz', 'alejandro-ortega-alvarez');
 familyData.addRelationship('alejando-ortega-muñoz', 'hector-manuel-ortega-alvarez');
 
+// pareja de alejando Ortega Álvarez
+familyData.addMember('lorena-estrella', 'Lorena Estrella', false, '/src/views/public/lorenaEstrella.jpg', null, null, 1);
+familyData.addSpouseRelationship('alejandro-ortega-alvarez', 'lorena-estrella');
 
+// hijos de alejando Ortega Álvarez
+familyData.addMember('sara-ortega-estrella', 'Sara Ortega Estrella', false, '/src/views/public/saraOrtegaEstrella.jpg', null, null, 1);
+familyData.addMember('cesar-alejandro-ortega-estrella', 'César Alejandro Ortega Estrella', false, '/src/views/public/cesarAlejandroOrtegaEstrella.jpg', null, null, 2);
+
+familyData.addRelationship('alejandro-ortega-alvarez', 'sara-ortega-estrella');
+familyData.addRelationship('alejandro-ortega-alvarez', 'cesar-alejandro-ortega-estrella');
+familyData.addRelationship('lorena-estrella', 'sara-ortega-estrella');
+familyData.addRelationship('lorena-estrella', 'cesar-alejandro-ortega-estrella');
 
 export default familyData;
 export { Family, Person };

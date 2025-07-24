@@ -9,73 +9,61 @@ import familyData from "../../data/family";
 const items = [
     {
         id: 1,
-        img: "https://picsum.photos/800/600?random=1",
+        img: './src/views/public/gallery/gallery3.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 2,
-        img: "https://picsum.photos/800/600?random=2",
+        img: './src/views/public/gallery/gallery4.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 3,
-        img: "https://picsum.photos/800/600?random=3",
+        img: './src/views/public/gallery/gallery5.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 4,
-        img: "https://picsum.photos/800/600?random=4",
+        img: './src/views/public/gallery/famAlvarezMejia.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 5,
-        img: "https://picsum.photos/800/600?random=5",
+        img: './src/views/public/gallery/gallery6.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 6,
-        img: "https://picsum.photos/800/600?random=6",
+        img: './src/views/public/gallery/gallery7.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 7,
-        img: "https://picsum.photos/800/600?random=7",
+        img: './src/views/public/gallery/gallery8.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 8,
-        img: "https://picsum.photos/800/600?random=8",
+        img: './src/views/public/gallery/gallery9.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 9,
-        img: "https://picsum.photos/800/600?random=9",
+        img: './src/views/public/gallery/gallery10.jpg',
         height: 400,
         url: "#"
     },
     {
         id: 10,
-        img: "https://picsum.photos/800/600?random=10",
-        height: 400,
-        url: "#"
-    },
-    {
-        id: 11,
-        img: "https://picsum.photos/800/600?random=11",
-        height: 400,
-        url: "#"
-    },
-    {
-        id: 12,
-        img: "https://picsum.photos/800/600?random=12",
+        img: './src/views/public/gallery/gallery11.jpg',
         height: 400,
         url: "#"
     },
@@ -107,7 +95,7 @@ function FamilyTree() {
             >
                 <Gallery
                     items={items}
-                    autoPlayInterval={3000}
+                    autoPlayInterval={5000}
                     ease="power2.out"
                     duration={0.6}
                     showThumbnails={true}
