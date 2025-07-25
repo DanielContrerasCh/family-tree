@@ -213,6 +213,18 @@ familyData.addRelationship('manuel-blanco-cuevas', 'ruben-blanco-alvarez');
 familyData.addRelationship('manuel-blanco-cuevas', 'maria-luisa-blanco-alvarez');
 familyData.addRelationship('manuel-blanco-cuevas', 'alma-rosa-blanco-alvarez');
 
+// Hijos de maría del carmen blanco alvarez
+familyData.addMember('pedro-chavez-blanco', 'Pedro Chávez Blanco', false, '/src/views/public/pedroChavezBlanco.jpg', null, null, 1); // 1
+familyData.addMember('carmen-chavez-blanco', 'Carmelita Chávez Blanco', false, '/src/views/public/carmenChavezBlanco.jpg', null, null, 2);
+familyData.addMember('jorge-chavez-blanco', 'Jorge Chávez Blanco', false, '/src/views/public/jorgeChavezBlanco.jpg', null, null, 3); // 3
+familyData.addMember('rosa-chavez-blanco', 'Rosa Chávez Blanco', false, '/src/views/public/rosaChavezBlanco.jpg', null, null, 4); // 4
+
+// Relaciones familiares hijos de María del Carmen Blanco Álvarez
+familyData.addRelationship('maria-del-carmen-blanco-alvarez', 'pedro-chavez-blanco');
+familyData.addRelationship('maria-del-carmen-blanco-alvarez', 'carmen-chavez-blanco');
+familyData.addRelationship('maria-del-carmen-blanco-alvarez', 'jorge-chavez-blanco');
+familyData.addRelationship('maria-del-carmen-blanco-alvarez', 'rosa-chavez-blanco');
+
 // Familia de cecilia Blanco Álvarez
 familyData.addMember('alma-carrido-blanco', 'Alma Carrillo Blanco', false, '/src/views/public/almaBlancoTODO.jpg', null, null, 1);
 familyData.addRelationship('cecilia-blanco-alvarez', 'alma-carrido-blanco');
@@ -461,7 +473,7 @@ familyData.addSpouseRelationship('bertha-contreras-alvarez', 'leoncio-terrones-o
 familyData.addMember('jose-ramon-terrones-contreras', 'José Ramón Terrones Contreras', false, '/src/views/public/joseRamonTerronesContreras.jpg', null, null, 1);
 familyData.addMember('alma-patricia-terrones-contreras', 'Alma Patricia Terrones Contreras', false, '/src/views/public/patyTerronesContreras.jpg', null, null, 2);
 familyData.addMember('leon-sergio-terrones-contreras', 'Leon Sergio Terrones Contreras', false, '/src/views/public/leonSergioTerronesContreras.jpg', null, null, 3);
-familyData.addMember('jazmin-terrones-contreras', 'Jazmín Terrones Contreras', false, '/src/views/public/jazminTerrones.jpg', null, null, 4);
+familyData.addMember('jazmin-terrones-contreras', 'Jazmín Terrones Contreras', false, '/src/views/public/jazminTerronesContreras.jpg', null, null, 4);
 familyData.addMember('mario-alberto-terrones-contreras', 'Mario Alberto Terrones Contreras', false, '/src/views/public/marioAlbertoTerronesContreras.jpg', null, null, 5);
 
 // Pareja de José Ramón Terrones Contreras
@@ -508,7 +520,7 @@ familyData.addSpouseRelationship('jazmin-terrones-contreras', 'arturo-hernandez-
 
 // Hijos de Jazmin Terrones Contreras
 familyData.addMember('diego-arturo-hernandez-terrones', 'Diego Arturo Hernández Terrones', false, '/src/views/public/diegoArturoHernandezTerrones.jpg', null, null, 1);
-familyData.addMember('dario-alejandro-hernandez-terrones', 'Darío Alejandro Hernández Terrones', false, '/src/views/public/daripAlejandroHernandezTerrones.jpg', null, null, 2);
+familyData.addMember('dario-alejandro-hernandez-terrones', 'Darío Alejandro Hernández Terrones', false, '/src/views/public/darioAlejandroHernandezTerrones.jpg', null, null, 2);
 
 // Relaciones familiares hijos de Jazmin Terrones Contreras
 familyData.addRelationship('jazmin-terrones-contreras', 'diego-arturo-hernandez-terrones');

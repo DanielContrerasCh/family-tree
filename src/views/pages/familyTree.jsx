@@ -68,6 +68,24 @@ const items = [
         url: "#"
     },
     {
+        id: 11,
+        img: './src/views/public/gallery/gallery12.jpg',
+        height: 400,
+        url: "#"
+    },
+    {
+        id: 12,
+        img: './src/views/public/gallery/gallery13.jpg',
+        height: 400,
+        url: "#"
+    },
+    {
+        id: 13,
+        img: './src/views/public/gallery/gallery14.jpg',
+        height: 400,
+        url: "#"
+    },
+    {
         id: 'rotating-text',
         isRotatingText: true,
         height: 400,

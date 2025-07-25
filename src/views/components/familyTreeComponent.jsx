@@ -254,15 +254,14 @@ const FamilyTreeComponent = ({
                 </div>
               )}
               
-              <div className={`modal-info-item ${expandedPerson.children.length > 2 ? 'full-width' : ''}`}>
-                <strong>Hijos</strong>
-                <span>
-                  {expandedPerson.children.length > 0 
-                    ? expandedPerson.children.map(c => c.getDisplayName()).join(', ')
-                    : 'No tiene hijos'
-                  }
-                </span>
-              </div>
+              {expandedPerson.children.length > 0 && (
+                <div className={`modal-info-item ${expandedPerson.children.length > 2 ? 'full-width' : ''}`}>
+                  <strong>Hijos</strong>
+                  <span>
+                    {expandedPerson.children.map(c => c.getDisplayName()).join(', ')}
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Botones de navegación */}
