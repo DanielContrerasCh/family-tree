@@ -841,7 +841,7 @@ familyData.addSpouseRelationship('rosa-maria-garcia-alvarez', 'cecilio-sanchez')
 // Hijos de Rosa María García Álvarez
 familyData.addMember('cecilia-sanchez-garcia', 'Cecilia Sanchez García', false, '/src/views/public/cecilioSanchezGarcia.jpg', null, null, 1);
 familyData.addMember('rosa-sanchez-garcia', 'Rosa Sanchez García', false, '/src/views/public/rosaSanchezGarcia.jpg', null, null, 2);
-familyData.addMember('alejandro-sanchez-garcia', 'Alejandro Sanchez García', false, '/src/views/public/alejandroSanchezGarcia.jpg', null, null, 3);
+familyData.addMember('alejandro-sanchez-garcia', 'Alejandro Sanchez García', true, '/src/views/public/alejandroSanchezGarcia.jpg', null, null, 3);
 familyData.addMember('susi-sanchez-garcia', 'Susi Sanchez García', false, '/src/views/public/susiSanchezGarcia.jpg', null, null, 3);
 
 // Relaciones familiares hijos de Rosa María García Álvarez
